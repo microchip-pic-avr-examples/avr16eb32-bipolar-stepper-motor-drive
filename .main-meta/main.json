@@ -4,7 +4,7 @@
     "content": {
         "metaDataVersion": "1.3.0",
         "name": "com.microchip.mcu8.mplabx.project.avr16eb32-bipolar-stepper-motor-drive",
-        "version": " ",
+        "version": "1.0.0",
         "displayName": "",
         "projectName": "avr16eb32-bipolar-stepper-motor-drive",
         "shortDescription": "Bipolar Stepper Motor Drive\r\n\r\nThe bipolar stepper motor will be driven in 3 modes:\r\n* full-step\r\n* half-step\r\n* microstep",
@@ -19,12 +19,12 @@
             }
         ],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "AVR-Ex_DFP",
+            "semverRange": "2.9.197"
         },
         "configurator": {
-            "name": "",
-            "semverRange": ""
+            "name": "MCC",
+            "semverRange": ">=5.5.7"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -37,8 +37,23 @@
             }
         },
         "author": "Bogdan-Alexandru Mariniuc",
-        "peripherals": [],
-        "keywords": [],
+        "peripherals": [
+            "Timer/Counter type E",
+            "WEX"
+        ],
+        "keywords": [
+            "Bipolar Stepper Motor",
+            "Stepper Motor",
+            "Stepper",
+            "Electric Motor",
+            "Motor Control",
+            "TCE",
+            "WEX",
+            "Timing Module",
+            "Waveform Generator",
+            "PWM Controller",
+            "Signal Generation"
+        ],
         "additionalData": {
             "longDescription": {
                 "metaDataVersion": "1.0.0",
