@@ -29,6 +29,7 @@ More details and code examples on the AVR16EB32 can be found at the following li
 
 - [AVR<sup>®</sup> EB Product Page](https://www.microchip.com/en-us/product/AVR16EB32)
 - [AVR<sup>®</sup> EB Code Examples on GitHub](https://github.com/microchip-pic-avr-examples?q=AVR16EB32)
+<br>[Back to Top](#dual-alternate)
 
 
 ## Software Used
@@ -36,8 +37,8 @@ More details and code examples on the AVR16EB32 can be found at the following li
 - [MPLAB® X IDE v6.20 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide)
 - [AVR-Ex DFP-2.9.197 or newer Device Pack](https://packs.download.microchip.com/)
 - [MPLAB® XC8 compiler v2.46](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers/downloads-documentation#XC8)
-- [MPLAB® Code Configurator (MCC) v 5.3.7](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator)
-- [MPLAB® Code Configurator (MCC) Melody Core v 2.7.0 or newer](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator)
+- [MPLAB® Code Configurator (MCC) v 5.5.0](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator)
+<br>[Back to Top](#dual-alternate)
 
 
 ## Hardware Used
@@ -58,9 +59,9 @@ More details and code examples on the AVR16EB32 can be found at the following li
 <br>Note:
 **!!!Caution:** The signal names in the left column do not reflect the real functionality. 
 
-
 <br><img src="../images/dual_setup_overview.png" height="500">
 <br>Hardware used
+<br>[Back to Top](#dual-alternate)
 
 
 ## Functionality
@@ -117,6 +118,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 
 <br><img src="../images/microstep.png">
 <br>Ideal waveforms of the current that flows through the coils.
+<br>[Back to Top](#dual-alternate)
 
 
 ## Configuration
@@ -138,7 +140,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 <br>To change the stepping mode, uncomment the corresponding macro in ```stepper.h```.
 <br>
 <br><img src="../images/select_mode_three.png">
-
+<br>[Back to Top](#dual-alternate)
 
 ## Flowchart
 
@@ -155,6 +157,8 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 
 <br>Flowchart for the ```CheckSteps``` function.
 <br><img src="../images/check_steps.png">
+<br>[Back to Top](#dual-alternate)
+
 
 ## Setup
 
@@ -259,6 +263,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 <br><img src="../images/generate_code.png">
 
 <br>14. Add the ```main.c```, ```stepper.c``` and ```stepper.h``` files to the project.
+<br>[Back to Top](#dual-alternate)
 
 
 ## Operation
@@ -296,6 +301,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 <br><img src="../images/program_project.png">
 
 12. Start the power supply.
+<br>[Back to Top](#dual-alternate)
 
 
 ## Results
@@ -320,6 +326,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 <br>Green represents the current through coil A.
 <br>
 <br>On all three traces a low pass filtering from the oscilloscope is applied. This removes the PWM artifacts and makes visible the short time average values.
+<br>[Back to Top](#dual-alternate)
 
 
 ## Summary

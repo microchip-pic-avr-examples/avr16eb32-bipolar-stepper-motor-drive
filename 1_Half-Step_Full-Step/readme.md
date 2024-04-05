@@ -24,6 +24,7 @@ More details and code examples on the AVR16EB32 can be found at the following li
 
 - [AVR<sup>®</sup> EB Product Page](https://www.microchip.com/en-us/product/AVR16EB32)
 - [AVR<sup>®</sup> EB Code Examples on GitHub](https://github.com/microchip-pic-avr-examples?q=AVR16EB32)
+<br>[Back to Top](#half-step-and-full-step)
 
 
 ## Software Used
@@ -31,8 +32,8 @@ More details and code examples on the AVR16EB32 can be found at the following li
 - [MPLAB® X IDE v6.20 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide)
 - [AVR-Ex DFP-2.9.197 or newer Device Pack](https://packs.download.microchip.com/)
 - [MPLAB® XC8 compiler v2.46](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers/downloads-documentation#XC8)
-- [MPLAB® Code Configurator (MCC) v 5.3.7](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator)
-- [MPLAB® Code Configurator (MCC) Melody Core v 2.7.0 or newer](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator)
+- [MPLAB® Code Configurator (MCC) v 5.5.0](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator)
+<br>[Back to Top](#half-step-and-full-step)
 
 
 ## Hardware Used
@@ -48,6 +49,8 @@ More details and code examples on the AVR16EB32 can be found at the following li
 
 <br><img src="../images/full_setup.png">
 <br>Hardware used
+<br>[Back to Top](#half-step-and-full-step)
+
 
 ## Functionality
 
@@ -73,6 +76,7 @@ initial position, steps (to go) and delay (speed).
 <br>Half-Step: eight half-steps sequence.
 <br><img src="../images/half_step_sequence_table.png">
 <br>Note: 0.707 represents sin(45 degrees) or cos(45 degrees).
+<br>[Back to Top](#half-step-and-full-step)
 
 
 ## Configuration
@@ -96,6 +100,7 @@ initial position, steps (to go) and delay (speed).
 <br> To change the stepping mode, uncomment the corresponding macro in ```stepper.h```.
 <br>
 <br><img src="../images/select_mode_two.png">
+<br>[Back to Top](#half-step-and-full-step)
 
 
 ## Flowchart
@@ -106,6 +111,7 @@ initial position, steps (to go) and delay (speed).
 <br>Sub-step division:
 <br>1 Full-Step = 1 sub-step
 <br>1 Half-Step = 2 sub-steps
+<br>[Back to Top](#half-step-and-full-step)
 
 
 ## Setup
@@ -189,6 +195,7 @@ initial position, steps (to go) and delay (speed).
 <br><img src="../images/generate_code.png">
 
 <br>12. Add the ```main.c```, ```stepper.c``` and ```stepper.h``` files to the project.
+<br>[Back to Top](#half-step-and-full-step)
 
 
 ## Operation
@@ -225,6 +232,7 @@ initial position, steps (to go) and delay (speed).
 <br><img src="../images/program_project.png">
 
 12. Start the power supply.
+<br>[Back to Top](#half-step-and-full-step)
 
 
 ## Results
@@ -245,6 +253,7 @@ initial position, steps (to go) and delay (speed).
 <br>Green represents the current through coil A.
 <br>
 <br>On all three traces a low pass filtering from the oscilloscope is applied. This removes the PWM artifacts and makes visible the short time average values.
+<br>[Back to Top](#half-step-and-full-step)
 
 
 ## Summary
