@@ -5,7 +5,7 @@
 <br><img src="../images/stepper_symbol.png">
 <br>Bipolar Stepper Motor
 
-<br>This example is showing how to drive alternatively two bipolar stepper motors using a single AVR microcontroller and two power boards. The stepper motors do not run at the same time.
+<br>This example shows how to drive alternatively two bipolar stepper motors using a single AVR microcontroller and two power boards. The stepper motors do not run at the same time.
 
 <br>The bipolar stepper motor will be driven in three modes:
 
@@ -51,12 +51,15 @@ More details and code examples on the AVR16EB32 can be found at the following li
 
 ## Setup
 
-<br>The AVR16EB32 Curiosity Nano Development Board is used along with the MPPB, AVR-EB Cnano to MPPB Adaptor Board, two stepper motors and a voltage power supply.
+<br>The AVR16EB32 Curiosity Nano Development board is used along with the MPPB, AVR-EB Cnano to MPPB Adaptor Board, two stepper motors and a voltage power supply.
 <br>It is possible to use a single or double power supply to power the two MPPB's.
+
+<br>Note:
 ## Adjust the supply voltage and the current limit according to the stepper motors used. Preferably the stepper motors should be of the same model and the two MPPB's should be powered from the same voltage source.
 
 <br><img src="../images/2stepper_commutation.png">
-## !!!Caution: The signal names in the left column do not reflect the real functionality. 
+<br>Note:
+**!!!Caution:** The signal names in the left column do not reflect the real functionality. 
 
 
 <br><img src="../images/dual_setup_overview.png" height="500">
@@ -65,19 +68,20 @@ More details and code examples on the AVR16EB32 can be found at the following li
 
 ## Functionality
 
-## !!!Caution: Do not change voltage during stepper movement. Application assumes the supply voltage is stable.
-## Supply voltage is checked and current adjusted only before movement.
+<br>Note:
+**!!!Caution:** Do not change voltage during the stepper movement. The application assumes the supply voltage is stable.
+<br>The supply voltage is checked and current adjusted only before movement.
 
 <br>The application is periodically calling the ```Stepper_Move``` function with the parameters:
-initial position, steps(to go), acceleration, deceleration, speed and vbus(bus voltage). In this implementation, the application automatically adjusts the drive amplitude according the the power supply voltage, trying to keep the current constant through the coils.
+initial position, steps (to go), acceleration, deceleration, speed and vbus (bus voltage). In this implementation, the application automatically adjusts the drive amplitude according the the power supply voltage, trying to keep the current constant through the coils.
 
 <br>The function precalculates the acceleration and deceleration time based on the speed and the number of steps the end-user wants the motor to move. 
-After the computation has been finsished, the ```StepAdvance``` function is called, which controls the movement of the motor. The stepper drive schema is controlled by the ```StepAdvance``` function. ```StepAdvance``` is generating a wave 90 electrical degrees shifted.
+After the computation is finished, the ```StepAdvance``` function is called, which controls the movement of the motor. The stepper drive schema is controlled by the ```StepAdvance``` function. ```StepAdvance``` is generating a wave 90 electrical degrees shifted.
 
 <br>After movement completion, the ```Stepper_Move``` returns the final position.
-<br>The drive is updated at every PWM cycle, once every 50 µs. 
+<br>The drive is updated at every Pulse-width modulation (PWM) cycle, once every 50 µs. 
 
-<br>Depending on the number of steps requested and the acceleration/deceleration values, the motor may reach (figure1)or not reach(figure2) the desired speed limit. If the distance to reach the speed is too small, the motor will accelerate and then start decelerating without reaching the limit speed.
+<br>Depending on the number of steps requested and the acceleration/deceleration values, the motor may reach the desired speed limit (figure 1) or not (figure 2). If the distance to reach the speed is too small, the motor will accelerate and then start decelerating without reaching the limit speed.
 
 <br><img src="../images/stepper_acc_decel.png">
 <br>Figure 1. The stepper motor has time to accelerate, reach and cruise at the speed limit, followed by the deceleration period.
@@ -97,17 +101,18 @@ After the computation has been finsished, the ```StepAdvance``` function is call
 <br><img src="../images/full_step.png">
 <br>Ideal waveforms of the current that flows through the coils. Each full-step represents a stepper motor mechanical movement of 1.8 degrees.
 
+<br>Full-Step: four full-steps sequence.
 <br><img src="../images/full_step_sequence_table.png">
-<br>Full-Step - 4 full-steps sequence.
 
 <br>For a better aproximation, we are inserting intermediary steps, called half-steps.
 ### Half-Step
 <br><img src="../images/half_step.png">
 <br>Ideal waveforms of the current that flows through the coils. Each half-step represents a stepper motor mechanical movement of 0.9 degrees.
 
+<br>Half-Step: eight half-steps sequence.
 <br><img src="../images/half_step_sequence_table.png">
-<br>Note: 0.707 represents sin(45deg) or cos(45deg).
-<br>Half-Step - 8 half-steps sequence.
+<br>Note: 0.707 represents sin(45 degrees) or cos(45 degrees).
+
 
 ## Microstep
 <br>To obtain a smoother movement and better positioning, the driving waveform is an approximation of a sinewave.
@@ -119,17 +124,17 @@ After the computation has been finsished, the ```StepAdvance``` function is call
 
 ## Configuration
 
-<br> Note: for a standard 200 full-steps/revolution stepper motor 1.8 mechanical degrees represent 360 electrical degrees (360 electrical degrees/200-steps is 1.8 mechanical degrees).
+<br>**Note**: for a standard 200 full-steps/revolution stepper motor 1.8 mechanical degrees represent 360 electrical degrees (360 electrical degrees/200-steps is 1.8 mechanical degrees).
 
-<br>The motor parameters can be configured in ```stepper.h```. The parameters that can be configured are the mechanical full-step angle and the mode in which the stepper should move(Full-Step, Half-Step or Microstep).
+<br>The motor parameters can be configured in ```stepper.h```. The parameters that can be configured are the mechanical full-step angle and the mode in which the stepper should move (Full-Step, Half-Step or Microstep).
 
 <br>The ```STEP_SIZE``` parameter is fixed and it represents the step angle of the stepper used in Full-Step mode. For this application, a stepper motor with 200 steps / mechanical revolution is used. 360 mechanical degrees/revolution divided by 200 steps results in 1.8 mechanical degrees/step.
 
-<br>The ```R``` parameter is fixed and represents the motor windings resistance, expressed in [ohm].
-<br>The ```I_OUT``` parameter is fixed and represents the motor peak current, expressed in [mA]
-<br>The ```KV``` parameter is fixed and represents the BEMF current compensation. At higher speed, the BEMF increases significantly and needs to be compensated, in order to maintain a constant torque, by proportionally increasing the drive amplitude.
+<br>The ```R``` parameter is fixed and it represents the motor windings resistance, expressed in [ohm].
+<br>The ```I_OUT``` parameter is fixed and it represents the motor peak current, expressed in [mA]
+<br>The ```KV``` parameter is fixed and it represents the BEMF current compensation. At higher speed, the BEMF increases significantly and needs to be compensated, in order to maintain a constant torque, by proportionally increasing the drive amplitude.
 
-<br>The application contains an option that allows the stepper coils to still remain energised after the steper motor has finished the movement. The user can enable/disable this functionality with the help of the ```RELEASE_IN_IDLE``` flag.
+<br>The application contains an option that allows the stepper coils to still remain energized after the steper motor has finished the movement. The user can enable/disable this functionality with the help of the ```RELEASE_IN_IDLE``` flag.
 <br>The flag is by default ```true```, which means that after every movement the current through the coils is stopped. If the user needs the coils to remain energised while the motor is staying, the ```RELEASE_IN_IDLE``` flag should be set to ```false```.
 <br><img src="../images/user_defines_three.png">
 
@@ -140,22 +145,22 @@ After the computation has been finsished, the ```StepAdvance``` function is call
 
 ## Flowchart
 
-<br>Flowchart for ```Stepper_Move``` function.
+<br>Flowchart for the ```Stepper_Move``` function.
 <br><img src="../images/stepper_move.png">
 
 <br>Sub-step division:
-<br>1 Full-Step = 1 sub - step
-<br>1 Half-Step = 2 sub - steps
-<br>1 Microstep = 32 sub - steps
+<br>1 Full-Step = 1 sub-step
+<br>1 Half-Step = 2 sub-steps
+<br>1 Microstep = 32 sub-steps
 
-<br>The ```CheckSteps``` function is called by ```Stepper_Move``` function. The function is needed to provide variable length delay inverse proportionally to the momentary speed of the stepper motor. It is using a fractional computation to avoid divisions.
+<br>The ```CheckSteps``` function is called by ```Stepper_Move``` function. The function is needed to provide variable length delay inverse proportional to the momentary speed of the stepper motor. It is using a fractional computation to avoid divisions.
 <br>```time_flag``` is a shared boolean variable which is set by the TCE interrupt, every 50 microseconds.
 
-<br>Flowchart for ```CheckSteps``` function.
+<br>Flowchart for the ```CheckSteps``` function.
 <br><img src="../images/check_steps.png">
 
 
-<br>To generate this project using MPLAB X IDE and the MPLAB X Code Configurator (MCC Melody, MCC Clasic is not supported on this device), follow the next steps:
+<br>To generate this project using MPLAB X IDE and the MPLAB X Code Configurator MPLAB X Code Configurator (MCC) with Melody (MCC Clasic is not supported for device), follow the next steps:
 
 <br>1. Open MPLAB X IDE and create a new project for the AVR16EB32 device.
 
@@ -209,12 +214,12 @@ After the computation has been finsished, the ```StepAdvance``` function is call
   <br> - Requested Dead-time High Side (μs) : 0.2
 <br><img src="../images/wex.png">
 
-<br>8. To add the ADC module, go to _Device Resources>Drivers>ADC>ADC0, then do the following configuration:
+<br>8. To add the ADC module, go to _Device Resources>Drivers>ADC>ADC0_, then do the following configuration:
 <br><img src="../images/add_adc.png">
   <br> - Prescaler Value: must be "System clock divided by 2" by default; if not select "System clock divided by 2"
   <br> - Sample Duratiom: 255
   <br> - ADC Enable: Toggle the button (it turns blue if enabled)
-  <br> - Lef Adjust
+  <br> - Left Adjust
   <br> - Free-Running mode Enable: Toggle the button (it turns blue if enabled)
   <br> - Reference select: VDD
   <br> - Analog Positive Channel Selection: ADC input pin 20
@@ -239,14 +244,14 @@ After the computation has been finsished, the ```StepAdvance``` function is call
 <br>10. In the **Pin Grid View**, in the ADC0 row, click the PC0 pin.
 <br><img src="../images/pin_grid_view_dual.png">
 
-<br>11. To add the BOD module, go to _Device Resources>System>BOD, then do the following configuration:
+<br>11. To add the BOD module, go to _Device Resources>System>BOD_, then do the following configuration:
 <br><img src="../images/add_bod.png">
-<br> -BOD Operation ub Active Mode: Enabled in continuous mode
+<br> -BOD Operation in Active Mode: Enabled in continuous mode
 <br> -BOD Level: 2.7V
 <br> -BOD Operation in Sleep Mode: Disabled
 <br><img src="../images/bod.png">
 
-<br>12. To add the UART module, go to _Device Resources>Drivers>UART>UART0, then do the following configuration:
+<br>12. To add the UART module, go to _Device Resources>Drivers>UART>UART0_, then do the following configuration:
 <br><img src="../images/add_uart.png">
 <br>- Requested Baudrate: 115200
 <br> -Redirect Printf to UART Enable: Toggle the button (it turns blue if enabled)
@@ -260,8 +265,9 @@ After the computation has been finsished, the ```StepAdvance``` function is call
 
 ## Operation
 
-## !!!Caution: Do not change power supply voltage during stepper movement. Application assumes the supply voltage is stable.
-## Supply voltage is checked and the current is adjusted only before movement.
+<br>Note:
+**!!!Caution:**  Do not change power supply voltage during stepper movement. Thew application assumes the supply voltage is stable.
+<br>The Supply voltage is checked and the current is adjusted only before movement.
 
 1. Be sure the power supply is turned off.
 
@@ -298,7 +304,7 @@ After the computation has been finsished, the ```StepAdvance``` function is call
 
 <br>On the terminal, the information about the movement of the stepper is shown.
 <br><img src="../images/terminal_dual.png">
-<br>Screen capture from microstep and full-ramp configuration.
+<br>Screen capture from Microstep and Full-Ramp configuration.
 <br>
 <br><img src="../images/full_step_capture.png">
 <br>Full-Step
@@ -320,4 +326,4 @@ After the computation has been finsished, the ```StepAdvance``` function is call
 
 ## Summary
 
-<br>This application shows how to drive two stepper motors in Full-Step or Half-Step or Microstep, while controlling the acceeleration and deceleration, two stepper motors using AVR16EB32, MPBB, MPBB Adapter and a power supply.
+<br>This application shows how to drive two stepper motors in Full-Step, Half-Step or Microstep, while controlling the acceeleration and deceleration, two stepper motors using AVR16EB32, MPBB, MPBB Adapter and a power supply.

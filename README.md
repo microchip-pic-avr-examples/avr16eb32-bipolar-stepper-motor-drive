@@ -22,7 +22,7 @@
 * Microstep
 
 
-<br> These modes will be explained in more detail in the following 4 applications. The complexity of the application will gradually increase.
+<br> These modes will be explained in more detail in the following four applications. The complexity of the application will gradually increase.
 
 ## Application scenarios:
 * [Basic example showing the stepper motor in Full-Step and Half-Step modes](1_Half-Step_Full-Step\readme.md)

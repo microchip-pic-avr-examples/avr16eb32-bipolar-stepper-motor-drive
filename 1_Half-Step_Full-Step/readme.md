@@ -46,7 +46,7 @@ More details and code examples on the AVR16EB32 can be found at the following li
 
 ## Setup
 
-<br>The AVR16EB32 Curiosity Nano Development Board is used along with the MPPB, AVR-EB Cnano to MPPB Adaptor Board, one stepper motor and a voltage power supply.
+<br>The AVR16EB32 Curiosity Nano Development board is used along with the MPPB, AVR-EB Cnano to MPPB Adaptor Board, one stepper motor and a voltage power supply.
 <br>Adjust the supply voltage and the current limit according to the stepper motor used. 
 
 <br><img src="../images/full_setup.png">
@@ -56,7 +56,7 @@ More details and code examples on the AVR16EB32 can be found at the following li
 ## Functionality
 
 <br>The application is periodically calling the ```Stepper_Move``` function with the parameters:
-initial position, steps(to go) and delay(speed).
+initial position, steps (to go) and delay (speed).
 
 <br>The function returns the stepper motor final position after the movement.
 <br>The stepper drive schema is controlled by the ```StepAdvance``` function. ```StepAdvance``` is generating a wave 90 electrical degrees shifted.
@@ -65,34 +65,35 @@ initial position, steps(to go) and delay(speed).
 <br><img src="../images/full_step.png">
 <br>Ideal waveforms of the current that flows through the coils. Each full-step represents a stepper motor mechanical movement of 1.8 degrees.
 
+<br>Full-Step: four full-steps sequence.
 <br><img src="../images/full_step_sequence_table.png">
-<br>Full-Step - 4 full-steps sequence.
+
 
 <br>For a better aproximation, we are inserting intermediary steps, called half-steps.
 ### Half-Step
 <br><img src="../images/half_step.png">
 <br>Ideal waveforms of the current that flows through the coils. Each half-step represents a stepper motor mechanical movement of 0.9 degrees.
 
+<br>Half-Step: eight half-steps sequence.
 <br><img src="../images/half_step_sequence_table.png">
-<br>Note: 0.707 represents sin(45deg) or cos(45deg).
-<br>Half-Step - 8 half-steps sequence.
+<br>Note: 0.707 represents sin(45 degrees) or cos(45 degrees).
 
 
 ## Configuration
 
-<br> Note: for a standard 200 full-steps/revolution stepper motor,  1.8 mechanical degrees represent 360 electrical degrees (360 electrical degrees/200-steps is 1.8 mechanical degrees).
+<br>**Note**: For a standard 200 full-steps/revolution stepper motor,  1.8 mechanical degrees represent 360 electrical degrees (360 electrical degrees/200-steps is 1.8 mechanical degrees).
 
 <br>The motor parameters can be configured in ```stepper.h```. 
 
-<br>The ```AMPLITUDE_DRIVE``` parameter sets the amplitude of the sine wave signal, ranging from 0 to 1.0 and is invers proportional with the power supply voltage(vbus) and direct proportional with the coil resistance and with the desired current consumption level. ```AMPLITUDE_DRIVE``` = desired current consumption * coil resistance / power supply voltage.
-<br>I.E.:<br> ```AMPLITUDE_DRIVE``` = 1.0[A] * 2.5[ohm] / 10[V] = 0.25
+<br>The ```AMPLITUDE_DRIVE``` parameter sets the amplitude of the sine wave signal, ranging from 0 to 1.0 and it is invers proportional with the power supply voltage (vbus) and it is directly proportional with the coil resistance and with the desired current consumption level. ```AMPLITUDE_DRIVE``` = desired current consumption * coil resistance/power supply voltage.
+<br>For example:<br> ```AMPLITUDE_DRIVE``` = 1.0[A] * 2.5[ohm]/10[V] = 0.25
 
 <br>The ```AMPLITUDE_STALL``` parameter represents 10-20% of ```AMPLITUDE_DRIVE```.
 
 <br>The ```STEP_SIZE``` parameter is fixed and it represents the step angle of the stepper used in Full-Step mode. For this application, a stepper motor with 200 steps / mechanical revolution is used. 360 mechanical degrees/revolution divided by 200 steps results in 1.8 mechanical degrees/step.
 
-<br>The application contains an option that allows the stepper coils to still remain energised after the steper motor has finished the movement. The user can enable/disable this functionality with the help of the ```RELEASE_IN_IDLE``` flag.
-<br>The flag is by default ```true```, which means that after every movement the current through the coils is stopped. If the user needs the coils to remain energised while the motor is staying, the ```RELEASE_IN_IDLE``` flag should be set to ```false```.
+<br>The application contains an option that allows the stepper coils to still remain energized after the steper motor has finished the movement. The user can enable or disable this functionality with the help of the ```RELEASE_IN_IDLE``` flag.
+<br>The flag is by default ```true```, which means that after every movement the current through the coils is stopped. If the user needs the coils to remain energized  while the motor is idle, the ```RELEASE_IN_IDLE``` flag should be set to ```false```.
 
 <br><img src="../images/user_defines_two.png">
 
@@ -103,7 +104,7 @@ initial position, steps(to go) and delay(speed).
 
 ## Flowchart
 
-<br>Flowchart for ```Stepper_Move``` function.
+<br>Flowchart for the ```Stepper_Move``` function.
 <br><img src="../images/stepper_move_basic.png">
 
 <br>Sub-step division:
@@ -111,7 +112,7 @@ initial position, steps(to go) and delay(speed).
 <br>1 Half-Step = 2 sub-steps
 
 
-<br>To generate this project using MPLAB X IDE and the MPLAB X Code Configurator (MCC Melody, MCC Clasic is not supported on this device), follow the next steps:
+<br>To generate this project using MPLAB X IDE and the MPLAB X Code Configurator (MCC) with Melody (MCC Clasic is not supported for this device), follow the next steps:
 
 <br>1. Open MPLAB X IDE and create a new project for the AVR16EB32 device.
 
@@ -173,14 +174,14 @@ initial position, steps(to go) and delay(speed).
 
 <br><img src="../images/pin_grid_view.png">
 
-<br>9. To add the BOD module, go to _Device Resources>System>BOD, then do the following configuration:
+<br>9. To add the BOD module, go to _Device Resources>System>BOD_, then do the following configuration:
 <br><img src="../images/add_bod.png">
-<br> -BOD Operation ub Active Mode: Enabled in continuous mode
+<br> -BOD Operation in Active Mode: Enabled in continuous mode
 <br> -BOD Level: 2.7V
 <br> -BOD Operation in Sleep Mode: Disabled
 <br><img src="../images/bod.png">
 
-<br>10. To add the UART module, go to _Device Resources>Drivers>UART>UART0, then do the following configuration:
+<br>10. To add the UART module, go to _Device Resources>Drivers>UART>UART0_, then do the following configuration:
 <br><img src="../images/add_uart.png">
 <br>- Requested Baudrate: 115200
 <br> -Redirect Printf to UART Enable: Toggle the button (it turns blue if enabled)
@@ -194,7 +195,8 @@ initial position, steps(to go) and delay(speed).
 
 ## Operation
 
-## !!!Caution: Do not change power supply voltage during stepper movement. The application does not implement any protection for over-current.
+<br>Note:
+**!!!Caution:** Do not change power supply voltage during the stepper movement. The application does not implement any protection for over-current.
 
 1. Be sure the power supply is turned off.
 
