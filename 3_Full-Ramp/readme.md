@@ -43,19 +43,16 @@ More details and code examples on the AVR16EB32 can be found at the following li
 ## Hardware Used
 
 - [AVR<sup>®</sup> EB Curiosity Nano](https://www.microchip.com/en-us/product/AVR16EB32)
-- [Multi-Phase Power Board (MPPB)](www.microchip.com/en-us/development-tool/EV35Z86A)
-- [AVR-EB Curiosity Nano Adaptor to MPPB](www.microchip.com/en-us/development-tool/EV88N31A)
+- [Multi-Phase Power Board (MPPB)](www.microchip.com/en-us/development-tool/EV35Z86A)(*link soon available)
+- [AVR-EB Curiosity Nano Adaptor to MPPB](www.microchip.com/en-us/development-tool/EV88N31A)(*link soon available)
 - Motor used in the application: 17HS8401S Stepper Motor, but not mandatory
 - A Voltage Power Supply (6-50V and 1-3A current capability, depending on the chosen motor)
-
-
-## Setup
 
 <br>The AVR16EB32 Curiosity Nano Development board is used along with the MPPB, AVR-EB Cnano to MPPB Adaptor Board, one stepper motor and a voltage power supply.
 <br>Adjust the supply voltage and the current limit according to the stepper motor used. 
 
 <br><img src="../images/full_setup.png">
-<br>The setup
+<br>Hardware used
 
 
 ## Functionality
@@ -126,7 +123,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 <br><img src="../images/select_mode_three.png">
 
 
-## Flowchart
+## Flowcharts
 
 <br>Flowchart for the ```Stepper_Move``` function.
 <br><img src="../images/stepper_move.png">
@@ -142,6 +139,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 <br>Flowchart for the ```CheckSteps``` function.
 <br><img src="../images/check_steps.png">
 
+## Setup
 
 <br>To generate this project using MPLAB X IDE and the MPLAB X Code Configurator MPLAB X Code Configurator (MCC) with Melody (MCC Clasic is not supported for this device), follow the next steps:
 
@@ -309,3 +307,15 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 ## Summary
 
 <br>This application shows how to drive a stepper motor in Full-Step, Half-Step or Microstep, while controlling the acceleration and deceleration, using AVR16EB32, MPBB, MPBB Adapter and a power supply.
+
+<br>[Back to Top](#full-ramp)
+<br>[Back to Related Documentation](#related-documentation)
+<br>[Back to Software Used](#software-used)
+<br>[Back to Hardware Used](#hardware-used)
+<br>[Back to Functionality](#functionality)
+<br>[Back to Configuration](#configuration)
+<br>[Back to Flowcharts](#flowcharts)
+<br>[Back to Setup](#setup)
+<br>[Back to Operation](#operation)
+<br>[Back to Results](#results)
+<br>[Back to Summary](#summary)

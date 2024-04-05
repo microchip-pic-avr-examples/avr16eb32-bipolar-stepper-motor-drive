@@ -43,13 +43,10 @@ More details and code examples on the AVR16EB32 can be found at the following li
 ## Hardware Used
 
 - [AVR<sup>®</sup> EB Curiosity Nano](https://www.microchip.com/en-us/product/AVR16EB32)
-- [2 x Multi-Phase Power Board (MPPB)](www.microchip.com/en-us/development-tool/EV35Z86A)
-- [AVR-EB Curiosity Nano Adaptor to MPPB](www.microchip.com/en-us/development-tool/EV88N31A)
+- [2 x Multi-Phase Power Board (MPPB)](www.microchip.com/en-us/development-tool/EV35Z86A)(*link soon available)
+- [AVR-EB Curiosity Nano Adaptor to MPPB](www.microchip.com/en-us/development-tool/EV88N31A)(*link soon available)
 - 2 x Motor used in the application: 17HS8401S Stepper Motor, but not mandatory
 - A Voltage Power Supply (6-50V and 1-3A current capability, depending on the chosen motor)
-
-
-## Setup
 
 <br>The AVR16EB32 Curiosity Nano Development board is used along with the MPPB, AVR-EB Cnano to MPPB Adaptor Board, two stepper motors and a voltage power supply.
 <br>It is possible to use a single or double power supply to power the two MPPB's.
@@ -63,7 +60,7 @@ More details and code examples on the AVR16EB32 can be found at the following li
 
 
 <br><img src="../images/dual_setup_overview.png" height="500">
-<br>The setup
+<br>Hardware used
 
 
 ## Functionality
@@ -159,6 +156,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 <br>Flowchart for the ```CheckSteps``` function.
 <br><img src="../images/check_steps.png">
 
+## Setup
 
 <br>To generate this project using MPLAB X IDE and the MPLAB X Code Configurator MPLAB X Code Configurator (MCC) with Melody (MCC Clasic is not supported for device), follow the next steps:
 
@@ -327,3 +325,15 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 ## Summary
 
 <br>This application shows how to drive two stepper motors in Full-Step, Half-Step or Microstep, while controlling the acceeleration and deceleration, two stepper motors using AVR16EB32, MPBB, MPBB Adapter and a power supply.
+
+<br>[Back to Top](#dual-alternate)
+<br>[Back to Related Documentation](#related-documentation)
+<br>[Back to Software Used](#software-used)
+<br>[Back to Hardware Used](#hardware-used)
+<br>[Back to Functionality](#functionality)
+<br>[Back to Configuration](#configuration)
+<br>[Back to Flowcharts](#flowcharts)
+<br>[Back to Setup](#setup)
+<br>[Back to Operation](#operation)
+<br>[Back to Results](#results)
+<br>[Back to Summary](#summary)

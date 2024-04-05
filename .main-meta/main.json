@@ -7,7 +7,7 @@
         "version": "1.0.0",
         "displayName": "Bipolar Stepper Motor Drive",
         "projectName": "avr16eb32-bipolar-stepper-motor-drive",
-        "shortDescription": "Bipolar Stepper Motor Drive. The bipolar stepper motor will be driven in three modes:Full-Step, Half-Step and Microstep",
+        "shortDescription": "Bipolar Stepper Motor Drive. The bipolar stepper motor will be driven in three modes: Full-Step, Half-Step and Microstep",
         "ide": {
             "name": "MPLAB X",
             "semverRange": ">=6.20.0"
@@ -24,7 +24,7 @@
         },
         "configurator": {
             "name": "MCC",
-            "semverRange": ">=5.5.7"
+            "semverRange": ">=5.5.0"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -47,8 +47,6 @@
             "Stepper",
             "Electric Motor",
             "Motor Control",
-            "TCE",
-            "WEX",
             "Timing Module",
             "Waveform Generator",
             "PWM Controller",
