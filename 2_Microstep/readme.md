@@ -28,7 +28,6 @@ More details and code examples on the AVR16EB32 can be found at the following li
 
 - [AVR<sup>®</sup> EB Product Page](https://www.microchip.com/en-us/product/AVR16EB32)
 - [AVR<sup>®</sup> EB Code Examples on GitHub](https://github.com/microchip-pic-avr-examples?q=AVR16EB32)
-<br>[Back to Top](#microstep)
 
 
 ## Software Used
@@ -37,7 +36,6 @@ More details and code examples on the AVR16EB32 can be found at the following li
 - [AVR-Ex DFP-2.9.197 or newer Device Pack](https://packs.download.microchip.com/)
 - [MPLAB® XC8 compiler v2.46](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-EB&utm_content=avr16eb32-bipolar-stepper-motor-drive-github&utm_bu=MCU08)
 - [MPLAB® Code Configurator (MCC) v 5.5.0](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-EB&utm_content=avr16eb32-bipolar-stepper-motor-drive-github&utm_bu=MCU08)
-<br>[Back to Top](#full-ramp)
 
 
 ## Hardware Used
@@ -54,7 +52,6 @@ More details and code examples on the AVR16EB32 can be found at the following li
 
 <br><img src="../images/full_setup.png">
 <br>Hardware used
-<br>[Back to Top](#microstep)
 
 
 ## Functionality
@@ -69,7 +66,7 @@ initial position, steps (to go) and delay (speed).
 <br><img src="../images/full_step.png">
 <br>Ideal waveforms of the current that flows through the coils. Each full-step represents a stepper motor mechanical movement of 1.8 degrees.
 
-<br>Full-Step: four full-steps sequence.
+<br>Full-Step: four full-steps sequence
 <br><img src="../images/full_step_sequence_table.png">
 
 
@@ -78,9 +75,10 @@ initial position, steps (to go) and delay (speed).
 <br><img src="../images/half_step.png">
 <br>Ideal waveforms of the current that flows through the coils. Each half-step represents a stepper motor mechanical movement of 0.9 degrees.
 
-<br>Half-Step: eight half-steps sequence.
+<br>Half-Step: eight half-steps sequence
 <br><img src="../images/half_step_sequence_table.png">
 <br>Note: 0.707 represents sin(45 degrees) or cos(45 degrees).
+<br>[Back to Top](#microstep)
 
 
 ## Microstep
@@ -106,7 +104,7 @@ initial position, steps (to go) and delay (speed).
 <br>The ```STEP_SIZE``` parameter is fixed and it represents the step angle of the stepper used in Full-Step mode. For this application, a stepper motor with 200 steps / mechanical revolution is used. 360 mechanical degrees/revolution divided by 200 steps results in 1.8 mechanical degrees/step.
 
 <br>The application contains an option that allows the stepper coils to still remain energized after the steper motor has finished the movement. The user can enable/disable this functionality with the help of the ```RELEASE_IN_IDLE``` flag.
-<br>The flag is by default ```true```, which means that after every movement the current through the coils is stopped. If the user needs the coils to remain energised while the motor is idle, the ```RELEASE_IN_IDLE``` flag should be set to ```false```.
+<br>The flag is by default ```true```, which means that after every movement the current through the coils is stopped. If the user needs the coils to remain energized while the motor is idle, the ```RELEASE_IN_IDLE``` flag must be set to ```false```.
 
 <br><img src="../images/user_defines_two.png">
 
@@ -118,13 +116,13 @@ initial position, steps (to go) and delay (speed).
 
 ## Flowchart
 
-<br>Flowchart for the ```Stepper_Move``` function.
+<br>Flowchart for the ```Stepper_Move``` function
 <br><img src="../images/stepper_move_basic.png">
 
 <br>Sub-step division:
 <br>1 Full-Step = 1 sub-step
 <br>1 Half-Step = 2 sub-steps
-<br>1 Microstep = 32 sub steps
+<br>1 Microstep = 32 sub-steps
 <br>[Back to Top](#microstep)
 
 
@@ -214,8 +212,8 @@ initial position, steps (to go) and delay (speed).
 
 ## Operation
 
-<br>Note:
-**!!!Caution:** Do not change power supply voltage during the stepper movement. The application does not implement any protection for over-current.
+<br>**Caution:**
+<br>Do not change power supply voltage during the stepper movement. The application does not implement any protection for over-current.
 
 1. Be sure the power supply is turned off.
 

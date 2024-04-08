@@ -29,7 +29,6 @@ More details and code examples on the AVR16EB32 can be found at the following li
 
 - [AVR<sup>®</sup> EB Product Page](https://www.microchip.com/en-us/product/AVR16EB32)
 - [AVR<sup>®</sup> EB Code Examples on GitHub](https://github.com/microchip-pic-avr-examples?q=AVR16EB32)
-<br>[Back to Top](#dual-alternate)
 
 ## Software Used
 
@@ -37,7 +36,6 @@ More details and code examples on the AVR16EB32 can be found at the following li
 - [AVR-Ex DFP-2.9.197 or newer Device Pack](https://packs.download.microchip.com/)
 - [MPLAB® XC8 compiler v2.46](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-EB&utm_content=avr16eb32-bipolar-stepper-motor-drive-github&utm_bu=MCU08)
 - [MPLAB® Code Configurator (MCC) v 5.5.0](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-EB&utm_content=avr16eb32-bipolar-stepper-motor-drive-github&utm_bu=MCU08)
-<br>[Back to Top](#full-ramp)
 
 
 ## Hardware Used
@@ -55,12 +53,11 @@ More details and code examples on the AVR16EB32 can be found at the following li
 ## Adjust the supply voltage and the current limit according to the stepper motors used. Preferably the stepper motors should be of the same model and the two MPPB's should be powered from the same voltage source.
 
 <br><img src="../images/2stepper_commutation.png">
-<br>Note:
-**!!!Caution:** The signal names in the left column do not reflect the real functionality. 
+<br>**Note:**
+<br>: The signal names in the left column do not reflect the real functionality. 
 
 <br><img src="../images/dual_setup_overview.png" height="500">
 <br>Hardware used
-<br>[Back to Top](#dual-alternate)
 
 
 ## Functionality
@@ -98,7 +95,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 <br><img src="../images/full_step.png">
 <br>Ideal waveforms of the current that flows through the coils. Each full-step represents a stepper motor mechanical movement of 1.8 degrees.
 
-<br>Full-Step: four full-steps sequence.
+<br>Full-Step: four full-steps sequence
 <br><img src="../images/full_step_sequence_table.png">
 
 <br>For a better aproximation, we are inserting intermediary steps, called half-steps.
@@ -106,7 +103,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 <br><img src="../images/half_step.png">
 <br>Ideal waveforms of the current that flows through the coils. Each half-step represents a stepper motor mechanical movement of 0.9 degrees.
 
-<br>Half-Step: eight half-steps sequence.
+<br>Half-Step: eight half-steps sequence
 <br><img src="../images/half_step_sequence_table.png">
 <br>Note: 0.707 represents sin(45 degrees) or cos(45 degrees).
 
@@ -133,7 +130,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 <br>The ```KV``` parameter is fixed and it represents the BEMF current compensation. At higher speed, the BEMF increases significantly and needs to be compensated, in order to maintain a constant torque, by proportionally increasing the drive amplitude.
 
 <br>The application contains an option that allows the stepper coils to still remain energized after the steper motor has finished the movement. The user can enable/disable this functionality with the help of the ```RELEASE_IN_IDLE``` flag.
-<br>The flag is by default ```true```, which means that after every movement the current through the coils is stopped. If the user needs the coils to remain energised while the motor is staying, the ```RELEASE_IN_IDLE``` flag should be set to ```false```.
+<br>The flag is by default ```true```, which means that after every movement the current through the coils is stopped. If the user needs the coils to remain energized while the motor is idle, the ```RELEASE_IN_IDLE``` flag must be set to ```false```.
 <br><img src="../images/user_defines_three.png">
 
 <br>To change the stepping mode, uncomment the corresponding macro in ```stepper.h```.
@@ -143,7 +140,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 
 ## Flowchart
 
-<br>Flowchart for the ```Stepper_Move``` function.
+<br>Flowchart for the ```Stepper_Move``` function
 <br><img src="../images/stepper_move.png">
 
 <br>Sub-step division:
@@ -154,7 +151,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 <br>The ```CheckSteps``` function is called by ```Stepper_Move``` function. The function is needed to provide variable length delay inverse proportional to the momentary speed of the stepper motor. It is using a fractional computation to avoid divisions.
 <br>```time_flag``` is a shared boolean variable which is set by the TCE interrupt, every 50 microseconds.
 
-<br>Flowchart for the ```CheckSteps``` function.
+<br>Flowchart for the ```CheckSteps``` function
 <br><img src="../images/check_steps.png">
 <br>[Back to Top](#dual-alternate)
 
@@ -267,8 +264,8 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 
 ## Operation
 
-<br>Note:
-**!!!Caution:**  Do not change power supply voltage during stepper movement. Thew application assumes the supply voltage is stable.
+<br>**Caution:**
+<br>Do not change power supply voltage during stepper movement. Thew application assumes the supply voltage is stable.
 <br>The Supply voltage is checked and the current is adjusted only before movement.
 
 1. Be sure the power supply is turned off.
