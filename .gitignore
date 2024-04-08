@@ -1,6 +1,28 @@
 # Untracked files in MPLABX projects
+/**/.generated_files
 /**/build/*
+/**/debug/*
+/**/dist/*
 /**/nbproject/*
 !/**/nbproject/*.xml
-/**/dist/*
-/**/.generated_files/*
+/**/[Ff]ree/production/*
+/**/[Pp]ro/production/*
+
+# Uncomment these to include hex/elf files
+#!/**/[Ff]ree/production/*.hex
+#!/**/[Ff]ree/production/*.elf
+#!/**/[Pp]ro/production/*.hex
+#!/**/[Pp]ro/production/*.elf
+
+# Office temp files
+/**/~$*.*x
+
+# Visual Studio Code
+.vscode
+
+# backup files
+/**/*.bak
+/**/*.bkp
+
+# mcc yaml files
+/**/*.yml
