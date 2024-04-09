@@ -222,11 +222,11 @@ initial position, steps (to go) and delay (speed).
 
 3. Adjust the current limit of the power supply according to the stepper motor specs.
 
-4. Connect the power supply to the MPBB.
+4. Connect the power supply to the MPPB.
 
-5. Connect the AVR16EB32 board the the MPBB Adapter.
+5. Connect the AVR16EB32 board the the MPPB Adapter.
 
-6. Connect the MPBB Adapter to the MPBB.
+6. Connect the MPPB Adapter to the MPPB.
 
 7. Connect the AVR16EB32 board to the PC.
 
@@ -275,7 +275,7 @@ initial position, steps (to go) and delay (speed).
 
 ## Summary
 
-<br>This application shows how to drive in Full-Step or Half-Step or Microstep a stepper motor using AVR16EB32, MPBB, MPBB Adapter and a power supply.
+<br>This application shows how to drive in Full-Step or Half-Step or Microstep a stepper motor using AVR16EB32, MPPB, MPPB Adapter and a power supply.
 
 <br>[Back to Top](#microstep)
 <br>[Back to Related Documentation](#related-documentation)

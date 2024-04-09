@@ -27,7 +27,7 @@ mode. It also provides double resolution of the Full-Step mode.
 
 More details and code examples on the AVR16EB32 can be found at the following links:
 
-- [AVR<sup>®</sup> EB Product Page](	https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/8-bit-mcus/avr-mcus/avr-eb?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-EB&utm_content=avr16eb32-bipolar-stepper-motor-drive-github&utm_bu=MCU08)
+- [AVR<sup>®</sup> EB Product Page](https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/8-bit-mcus/avr-mcus/avr-eb?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-EB&utm_content=avr16eb32-bipolar-stepper-motor-drive-github&utm_bu=MCU08)
 - [AVR<sup>®</sup> EB Code Examples on GitHub](https://github.com/microchip-pic-avr-examples?q=AVR16EB32)
 
 ## Software Used
@@ -273,11 +273,11 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 
 3. Adjust the current limit of the power supply according to the stepper motor specs.
 
-4. Connect the power supply to the MPBB.
+4. Connect the power supply to the MPPB.
 
-5. Connect the AVR16EB32 board the the MPBB Adapter.
+5. Connect the AVR16EB32 board the the MPPB Adapter.
 
-6. Connect the MPBB Adapter to the MPBB.
+6. Connect the MPPB Adapter to the MPPB.
 
 7. Connect the AVR16EB32 board to the PC.
 
@@ -326,7 +326,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 
 ## Summary
 
-<br>This application shows how to drive two stepper motors in Full-Step, Half-Step or Microstep, while controlling the acceeleration and deceleration, two stepper motors using AVR16EB32, MPBB, MPBB Adapter and a power supply.
+<br>This application shows how to drive two stepper motors in Full-Step, Half-Step or Microstep, while controlling the acceeleration and deceleration, two stepper motors using AVR16EB32, MPPB, MPPB Adapter and a power supply.
 
 <br>[Back to Top](#dual-alternate)
 <br>[Back to Related Documentation](#related-documentation)
