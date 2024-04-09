@@ -27,7 +27,7 @@ mode. It also provides double resolution of the Full-Step mode.
 
 More details and code examples on the AVR16EB32 can be found at the following links:
 
-- [AVR<sup>®</sup> EB Product Page](https://www.microchip.com/en-us/product/AVR16EB32)
+- [AVR<sup>®</sup> EB Product Page](	https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/8-bit-mcus/avr-mcus/avr-eb?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-EB&utm_content=avr16eb32-bipolar-stepper-motor-drive-github&utm_bu=MCU08)
 - [AVR<sup>®</sup> EB Code Examples on GitHub](https://github.com/microchip-pic-avr-examples?q=AVR16EB32)
 
 ## Software Used
@@ -41,20 +41,20 @@ More details and code examples on the AVR16EB32 can be found at the following li
 ## Hardware Used
 
 - [AVR<sup>®</sup> EB Curiosity Nano](https://www.microchip.com/en-us/development-tool/EV73J36A?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-EB&utm_content=avr16eb32-bipolar-stepper-motor-drive-github&utm_bu=MCU08)
-- [2 X Multi-Phase Power Board (MPPB)](www.microchip.com/en-us/development-tool/EV35Z86A)(*link soon available)
-- [AVR-EB Curiosity Nano Adaptor to MPPB](www.microchip.com/en-us/development-tool/EV88N31A)(*link soon available)
+- [2 X Multi-Phase Power Board (MPPB)]
+- [AVR-EB Curiosity Nano Adaptor to MPPB]
 - 2 X Motor used in the application: 17HS8401S Stepper Motor, but not mandatory
 - A Voltage Power Supply (6-50V and 1-3A current capability, depending on the chosen motor)
 
 <br>The AVR16EB32 Curiosity Nano Development board is used along with the MPPB, AVR-EB Cnano to MPPB Adaptor Board, two stepper motors and a voltage power supply.
 <br>It is possible to use a single or double power supply to power the two MPPB's.
 
-<br>Note:
-## Adjust the supply voltage and the current limit according to the stepper motors used. Preferably the stepper motors should be of the same model and the two MPPB's should be powered from the same voltage source.
+<br>**Note:**
+<br>Adjust the supply voltage and the current limit according to the stepper motors used. Preferably, the stepper motors must be of the same model and the two MPPB's should be powered from the same voltage source.
 
 <br><img src="../images/2stepper_commutation.png">
 <br>**Note:**
-<br>: The signal names in the left column do not reflect the real functionality. 
+<br>The signal names in the left column do not reflect the real functionality. 
 
 <br><img src="../images/dual_setup_overview.png" height="500">
 <br>Hardware used
@@ -62,8 +62,7 @@ More details and code examples on the AVR16EB32 can be found at the following li
 
 ## Functionality
 
-<br>Note:
-**!!!Caution:** Do not change voltage during the stepper movement. The application assumes the supply voltage is stable.
+<br>**Caution:** Do not change voltage during the stepper movement. The application assumes the supply voltage is stable.
 <br>The supply voltage is checked and current adjusted only before movement.
 
 <br>The application is periodically calling the ```Stepper_Move``` function with the parameters:
@@ -78,10 +77,10 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 <br>Depending on the number of steps requested and the acceleration/deceleration values, the motor may reach the desired speed limit (figure 1) or not (figure 2). If the distance to reach the speed is too small, the motor will accelerate and then start decelerating without reaching the limit speed.
 
 <br><img src="../images/stepper_acc_decel.png">
-<br>Figure 1. The stepper motor has time to accelerate, reach and cruise at the speed limit, followed by the deceleration period.
+<br>Figure 1. The stepper motor has time to accelerate, reach and cruise at the speed limit, followed by the deceleration period
 
 <br><img src="../images/stepper_acc_decel_triangle.png">
-<br>Figure 2. The distance to reach the speed is too small. The stepper motor will accelerate and then start decelerating without reaching the limit speed.
+<br>Figure 2. The distance to reach the speed is too small. The stepper motor will accelerate and then start decelerating without reaching the limit speed
 
 <br>The commutation between the two steppers is done in main.c.
 
@@ -110,7 +109,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 
 ## Microstep
 <br>To obtain a smoother movement and better positioning, the driving waveform is an approximation of a sinewave.
-<br>In the current implementation, the 1.8 degrees precision of the full-step are divided by 32 microstep, resulting in a microstepping precision of less then 0.06 degrees.
+<br>In the current implementation, the 1.8 degrees precision of the full-step are divided by 32 microstep, resulting in a microstepping precision of less than 0.06 degrees.
 
 <br><img src="../images/microstep.png">
 <br>Ideal waveforms of the current that flows through the coils.
@@ -148,7 +147,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 <br>1 Half-Step = 2 sub-steps
 <br>1 Microstep = 32 sub-steps
 
-<br>The ```CheckSteps``` function is called by ```Stepper_Move``` function. The function is needed to provide variable length delay inverse proportional to the momentary speed of the stepper motor. It is using a fractional computation to avoid divisions.
+<br>The ```CheckSteps``` function is called by ```Stepper_Move``` function. The function is needed to provide variable length delay inversely proportional to the momentary speed of the stepper motor. It is using a fractional computation to avoid divisions.
 <br>```time_flag``` is a shared boolean variable which is set by the TCE interrupt, every 50 microseconds.
 
 <br>Flowchart for the ```CheckSteps``` function
@@ -265,7 +264,7 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 ## Operation
 
 <br>**Caution:**
-<br>Do not change power supply voltage during stepper movement. Thew application assumes the supply voltage is stable.
+<br>Do not change power supply voltage during stepper movement. The application assumes the supply voltage is stable.
 <br>The Supply voltage is checked and the current is adjusted only before movement.
 
 1. Be sure the power supply is turned off.

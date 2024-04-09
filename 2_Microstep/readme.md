@@ -26,7 +26,7 @@ mode. It also provides double resolution of the Full-Step mode.
 
 More details and code examples on the AVR16EB32 can be found at the following links:
 
-- [AVR<sup>®</sup> EB Product Page](https://www.microchip.com/en-us/product/AVR16EB32)
+- [AVR<sup>®</sup> EB Product Page](https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/8-bit-mcus/avr-mcus/avr-eb?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-EB&utm_content=avr16eb32-bipolar-stepper-motor-drive-github&utm_bu=MCU08)
 - [AVR<sup>®</sup> EB Code Examples on GitHub](https://github.com/microchip-pic-avr-examples?q=AVR16EB32)
 
 
@@ -41,10 +41,11 @@ More details and code examples on the AVR16EB32 can be found at the following li
 ## Hardware Used
 
 - [AVR<sup>®</sup> EB Curiosity Nano](https://www.microchip.com/en-us/development-tool/EV73J36A?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-EB&utm_content=avr16eb32-bipolar-stepper-motor-drive-github&utm_bu=MCU08)
-- [Multi-Phase Power Board (MPPB)](www.microchip.com/en-us/development-tool/EV35Z86A)(*link soon available)
-- [AVR-EB Curiosity Nano Adaptor to MPPB](www.microchip.com/en-us/development-tool/EV88N31A)(*link soon available)
+- [Multi-Phase Power Board (MPPB)]
+- [AVR-EB Curiosity Nano Adaptor to MPPB]
 - Motor used in the application: 17HS8401S Stepper Motor, but not mandatory
 - A Voltage Power Supply (6-50V and 1-3A current capability, depending on the chosen motor)
+
 
 
 <br>The AVR16EB32 Curiosity Nano Development board is used along with the MPPB, AVR-EB Cnano to MPPB Adaptor Board, one stepper motor and a voltage power supply.
@@ -83,7 +84,7 @@ initial position, steps (to go) and delay (speed).
 
 ## Microstep
 <br>To obtain a smoother movement and better positioning, the driving waveform is an approximation of a sinewave.
-<br>In the current implementation, the 1.8 degrees precision of the full-step are divided into 32 microsteps, resulting in a microstepping precision of less then 0.06 degrees.
+<br>In the current implementation, the 1.8 degrees precision of the full-step are divided into 32 microsteps, resulting in a microstepping precision of less than 0.06 degrees.
 
 <br><img src="../images/microstep.png">
 <br>Ideal waveforms of the current that flows through the coils.
