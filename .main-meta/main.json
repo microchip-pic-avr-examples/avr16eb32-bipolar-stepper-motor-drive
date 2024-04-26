@@ -4,7 +4,7 @@
     "content": {
         "metaDataVersion": "1.3.0",
         "name": "com.microchip.mcu8.mplabx.project.avr16eb32-bipolar-stepper-motor-drive",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "displayName": "Bipolar Stepper Motor Drive",
         "projectName": "avr16eb32-bipolar-stepper-motor-drive",
         "shortDescription": "Bipolar Stepper Motor Drive. The bipolar stepper motor will be driven in three modes: Full-Step, Half-Step and Microstep",

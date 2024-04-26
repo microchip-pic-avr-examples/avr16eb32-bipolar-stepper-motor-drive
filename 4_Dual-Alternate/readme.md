@@ -143,9 +143,9 @@ After the computation is finished, the ```StepAdvance``` function is called, whi
 <br><img src="../images/stepper_move.png">
 
 <br>Sub-step division:
-<br>1 Full-Step = 1 sub-step
-<br>1 Half-Step = 2 sub-steps
-<br>1 Microstep = 32 sub-steps
+<br>1 full-step = reference
+<br>1 half-step = 1/2 full-step
+<br>1 microstep = 1/32 full-step
 
 <br>The ```CheckSteps``` function is called by ```Stepper_Move``` function. The function is needed to provide variable length delay inversely proportional to the momentary speed of the stepper motor. It is using a fractional computation to avoid divisions.
 <br>```time_flag``` is a shared boolean variable which is set by the TCE interrupt, every 50 microseconds.

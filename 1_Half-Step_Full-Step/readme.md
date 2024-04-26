@@ -107,8 +107,8 @@ initial position, steps (to go) and delay (speed).
 <br><img src="../images/stepper_move_basic.png">
 
 <br>Sub-step division:
-<br>1 Full-Step = 1 sub-step
-<br>1 Half-Step = 2 sub-steps
+<br>1 full-step = reference
+<br>1 half-step = 1/2 full-step
 <br>[Back to Top](#half-step-and-full-step)
 
 
